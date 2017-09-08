@@ -1,19 +1,30 @@
 import React from 'react';
 import ReactDom from 'react-dom/server';
 
+import { Provider } from 'react-redux';
+
+import { createStore } from 'redux';
+
 import { StaticRouter } from 'react-router-dom';
 
 import express from 'express';
 
 import Index from '../views/Index';
 import ErrorPage from '../views/Error';
+import reducers from '../../common/reducers';
 
 const router = express.Router();
 const context = {};
 
 router.get('*', function (req, res) {
+	const store = createStore(reducers);
+
 	res.send('<!doctype html>\n' + ReactDom.renderToStaticMarkup(
-		<StaticRouter location={req.url} context={context}><Index/></StaticRouter>
+		<StaticRouter location={req.url} context={context}>
+			<Provider store={ store }>
+				<Index preloadedState={ store.getState() }/>
+			</Provider>
+		</StaticRouter>
 	));
 });
 

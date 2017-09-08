@@ -7,7 +7,7 @@ import favicon from 'serve-favicon';
 import logger from 'morgan';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
-import routes, { error404, error500, allRoutes } from '../platform/routes/index';
+import routes, { error404, error500 } from '../platform/routes/index';
 
 const app = express();
 const debug = _debug('xmpp-mocker:server');
