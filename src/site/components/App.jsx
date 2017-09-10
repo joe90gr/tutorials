@@ -9,7 +9,7 @@ import About from './pages/About';
 import Topics from './pages/Topics';
 import ReduxExample from './pages/ReduxExample';
 
-const RouterLayer = () => (
+export const App = () => (
 	<Switch>
 		<Layout1 exact path="/"><Home/></Layout1>
 		<Layout2 path="/about"><About/></Layout2>
@@ -17,5 +17,3 @@ const RouterLayer = () => (
 		<Layout1 path="/redux-example"><ReduxExample/></Layout1>
 	</Switch>
 );
-
-export default RouterLayer;

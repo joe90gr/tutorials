@@ -1,6 +1,6 @@
 import React from 'react';
 
-import RouterLayer from '../../site/components/RouterLayer';
+import { App } from '../../site/components/App';
 
 function Index({ preloadedState }) {
 	return (
@@ -10,7 +10,7 @@ function Index({ preloadedState }) {
 				<script dangerouslySetInnerHTML={ { __html: `window.__PRELOADED_STATE__ = ${ JSON.stringify(preloadedState).replace(/</g, '\\u003c')}` } }/>
 			</head>
 			<body>
-				<div className="root"><RouterLayer/></div>
+				<div className="root"><App/></div>
 				<script type="text/javascript" src="/js/bundle.js" />
 			</body>
 		</html>

@@ -3,19 +3,21 @@ import ReactDOM from 'react-dom';
 
 import { BrowserRouter } from 'react-router-dom';
 
-import RouterLayer from './components/RouterLayer';
+import { App } from './components/App';
 
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+
 import reducers from '../common/reducers';
 import { Provider } from 'react-redux';
 
 const preloadedState = window.__PRELOADED_STATE__;
-const store = createStore(reducers, preloadedState);
+const store = createStore(reducers, preloadedState, applyMiddleware(thunk));
 
 delete window.__PRELOADED_STATE__;
 
 ReactDOM.render(<BrowserRouter>
     <Provider store={ store }>
-        <RouterLayer/>
+        <App/>
     </Provider>
 </BrowserRouter>, document.getElementsByClassName('root')[0]);

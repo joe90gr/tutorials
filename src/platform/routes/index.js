@@ -3,7 +3,8 @@ import ReactDom from 'react-dom/server';
 
 import { Provider } from 'react-redux';
 
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 
 import { StaticRouter } from 'react-router-dom';
 
@@ -17,7 +18,7 @@ const router = express.Router();
 const context = {};
 
 router.get('*', function (req, res) {
-	const store = createStore(reducers);
+	const store = createStore(reducers, applyMiddleware(thunk));
 
 	res.send('<!doctype html>\n' + ReactDom.renderToStaticMarkup(
 		<StaticRouter location={req.url} context={context}>

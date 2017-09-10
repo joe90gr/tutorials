@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Counter from '../../../common/components/Counter';
+import Counter from '../../../common/components/Counter/';
 
 const ReduxExample = () => (
 	<Counter />
