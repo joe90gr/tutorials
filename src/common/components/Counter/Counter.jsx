@@ -16,6 +16,7 @@ const Counter = ({ increment, decrement, incrementIfOdd, incrementAsync, number 
 	</div>
 );
 
+Counter.displayName = 'Counter';
 Counter.propTypes = {
 	increment: func,
 	decrement: func,

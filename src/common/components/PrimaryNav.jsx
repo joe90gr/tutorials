@@ -10,4 +10,6 @@ const Nav = () => (
 	</ul>
 );
 
+Nav.displayName = 'Nav';
+
 export default Nav;

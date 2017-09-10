@@ -1,4 +1,5 @@
 import React from 'react';
+import { object } from 'prop-types';
 
 import { App } from '../../site/components/App';
 
@@ -18,5 +19,6 @@ function Index({ preloadedState }) {
 }
 
 Index.displayName = 'Index';
+Index.propTypes = { preloadedState: object };
 
 export default Index;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { string } from 'prop-types';
 
 function ErrorPage({ message, error }) {
 	return (
@@ -15,5 +16,9 @@ function ErrorPage({ message, error }) {
 }
 
 ErrorPage.displayName = 'Error';
+ErrorPage.propTypes = {
+	message: string,
+	error: string
+};
 
 export default ErrorPage;

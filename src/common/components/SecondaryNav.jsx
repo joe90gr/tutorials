@@ -1,4 +1,5 @@
 import React from 'react';
+import { object } from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
 const SecondaryNav = ({ match: { url } }) => (
@@ -8,5 +9,8 @@ const SecondaryNav = ({ match: { url } }) => (
         <li><NavLink to={`${url}/props-v-state`}>Props v. State</NavLink></li>
     </ul>
 );
+
+SecondaryNav.propTypes = { match: object };
+SecondaryNav.displayName = 'SecondaryNav';
 
 export default SecondaryNav;

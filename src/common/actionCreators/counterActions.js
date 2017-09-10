@@ -12,5 +12,5 @@ export function incrementIfOdd(dispatch, getState, el) {
 }
 
 export function incrementAsync(dispatch) {
-	setTimeout(() => (dispatch(increment)), 1000);
+	setTimeout(() => dispatch(increment), 1000);
 }
